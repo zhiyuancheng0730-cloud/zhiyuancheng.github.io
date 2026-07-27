@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zhiyuan Cheng | Researcher</title>
+<meta name="description" content="Zhiyuan Cheng — PhD student at the Francis Crick Institute. CRISPR systems, stem cell biology, and cancer therapeutics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-deep: #070E1A;
+    --bg-card: #0F1726;
+    --bg-card-hover: #151F33;
+    --accent: #00E59A;
+    --accent-dim: rgba(0, 229, 154, 0.12);
+    --accent-blue: #5B8DEF;
+    --text-primary: #E4E9F0;
+    --text-secondary: #8490A5;
+    --text-muted: #4E5A70;
+    --border: rgba(255,255,255,0.06);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--bg-deep);
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(7, 14, 26, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.15rem; color: var(--accent);
+    text-decoration: none; letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-display); font-size: 0.85rem; font-weight: 500;
+    color: var(--text-secondary); text-decoration: none;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  .hamburger {
+    display: none; background: none; border: none; cursor: pointer;
+    width: 28px; height: 20px; position: relative;
+  }
+  .hamburger span {
+    display: block; width: 100%; height: 2px;
+    background: var(--text-secondary); position: absolute; left: 0;
+    transition: all 0.3s;
+  }
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 9px; }
+  .hamburger span:nth-child(3) { top: 18px; }
+
+  /* ---- SECTIONS ---- */
+  section { padding: 7rem 2rem 4rem; }
+  .container { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    font-family: var(--font-display); font-size: 0.75rem;
+    font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.15em; color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: 2rem;
+    font-weight: 700; letter-spacing: -0.03em;
+    color: var(--text-primary); margin-bottom: 2.5rem;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding-top: 60px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -30%; right: -20%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,229,154,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-greeting {
+    font-family: var(--font-display); font-size: 1rem;
+    font-weight: 500; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .hero-name {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    letter-spacing: -0.04em; line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+  .hero-name .accent-gradient {
+    background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-desc {
+    font-size: 1.15rem; color: var(--text-secondary);
+    max-width: 580px; line-height: 1.8; margin-bottom: 2.5rem;
+  }
+  .hero-desc strong { color: var(--text-primary); font-weight: 600; }
+  .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+    padding: 0.75rem 1.75rem; border-radius: 6px;
+    text-decoration: none; transition: all 0.25s; cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary {
+    background: var(--accent); color: var(--bg-deep); border: none;
+  }
+  .btn-primary:hover { background: #00ffaa; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--accent);
+    border: 1.5px solid rgba(0,229,154,0.35);
+  }
+  .btn-outline:hover {
+    border-color: var(--accent); background: var(--accent-dim);
+  }
+
+  /* ---- ABOUT ---- */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    align-items: start;
+  }
+  .about-text { font-size: 1rem; color: var(--text-secondary); line-height: 1.85; }
+  .about-text p + p { margin-top: 1rem; }
+  .about-text strong { color: var(--text-primary); }
+  .stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  }
+  .stat-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.5rem;
+    transition: border-color 0.25s;
+  }
+  .stat-card:hover { border-color: rgba(0,229,154,0.25); }
+  .stat-number {
+    font-family: var(--font-display); font-size: 1.75rem;
+    font-weight: 700; color: var(--accent); margin-bottom: 0.25rem;
+  }
+  .stat-desc {
+    font-size: 0.8rem; color: var(--text-secondary);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    font-family: var(--font-display); font-weight: 500;
+  }
+
+  /* ---- RESEARCH ---- */
+  .research-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 2.25rem;
+    margin-bottom: 1.5rem; position: relative;
+    border-left: 3px solid var(--accent);
+    transition: all 0.3s;
+  }
+  .research-card:hover {
+    border-color: rgba(0,229,154,0.3);
+    border-left-color: var(--accent);
+    background: var(--bg-card-hover);
+    transform: translateX(4px);
+  }
+  .research-meta {
+    display: flex; gap: 1.5rem; flex-wrap: wrap;
+    margin-bottom: 0.75rem; align-items: center;
+  }
+  .research-lab {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 0.8rem; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .research-date {
+    font-size: 0.8rem; color: var(--text-muted);
+    font-family: var(--font-display); font-weight: 500;
+  }
+  .research-title {
+    font-family: var(--font-display); font-size: 1.25rem;
+    font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 0.75rem; color: var(--text-primary);
+  }
+  .research-body {
+    color: var(--text-secondary); font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  .research-body ul {
+    list-style: none; padding: 0; margin-top: 0.75rem;
+  }
+  .research-body li {
+    padding-left: 1.25rem; position: relative;
+    margin-bottom: 0.4rem;
+  }
+  .research-body li::before {
+    content: ''; position: absolute; left: 0; top: 0.7em;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); opacity: 0.5;
+  }
+  .tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .tag {
+    font-size: 0.7rem; font-family: var(--font-display); font-weight: 600;
+    padding: 0.3rem 0.75rem; border-radius: 20px;
+    background: var(--accent-dim); color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+
+  /* ---- PUBLICATIONS ---- */
+  .pub-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 2.25rem;
+    transition: border-color 0.3s;
+  }
+  .pub-card:hover { border-color: rgba(0,229,154,0.25); }
+  .pub-journal {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.85rem; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .pub-journal::before {
+    content: ''; display: inline-block;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .pub-title {
+    font-family: var(--font-display); font-size: 1.15rem;
+    font-weight: 600; letter-spacing: -0.01em;
+    margin-bottom: 0.75rem; line-height: 1.5;
+  }
+  .pub-authors {
+    font-size: 0.9rem; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 1rem;
+  }
+  .pub-authors .me { color: var(--accent); font-weight: 600; }
+  .pub-doi a {
+    font-size: 0.85rem; color: var(--accent-blue);
+    text-decoration: none; font-family: var(--font-display);
+    font-weight: 500;
+  }
+  .pub-doi a:hover { text-decoration: underline; }
+  .pub-badge {
+    display: inline-block; margin-top: 1rem;
+    font-size: 0.7rem; font-family: var(--font-display); font-weight: 700;
+    padding: 0.3rem 0.85rem; border-radius: 20px;
+    background: rgba(91,141,239,0.12); color: var(--accent-blue);
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem; text-align: center;
+  }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+  .footer-links a {
+    color: var(--text-secondary); text-decoration: none;
+    font-family: var(--font-display); font-size: 0.85rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy {
+    font-size: 0.8rem; color: var(--text-muted);
+  }
+
+  /* ---- MOBILE ---- */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 60px; left: 0; right: 0;
+      background: rgba(7, 14, 26, 0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links.open a {
+      display: block; padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .hero-name { font-size: clamp(2rem, 9vw, 3.5rem); }
+    section { padding: 5rem 1.25rem 3rem; }
+    .research-card, .pub-card { padding: 1.5rem; }
+    .section-title { font-size: 1.6rem; }
+  }
+  @media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">ZC.</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#research" onclick="closeMenu()">Research</a></li>
+      <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
+      <li><a href="Zhiyuan_Cheng_CV.pdf" target="_blank" onclick="closeMenu()">CV ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+    <p class="hero-greeting">Biochemistry · CRISPR · Stem Cells</p>
+    <h1 class="hero-name">
+      <span class="accent-gradient">Zhiyuan Cheng</span><br>
+      程致元
+    </h1>
+    <p class="hero-desc">
+      Incoming PhD student at the <strong>Francis Crick Institute</strong>, studying FOXO1 gain-of-function mutations in liver regeneration. Previously at the <strong>Doudna Lab</strong> (Gladstone Institutes) and <strong>Huang Lab</strong> (UCSF), engineering CRISPR-based cancer therapeutics and probing cardiac regeneration.
+    </p>
+    <div class="hero-links">
+      <a href="#research" class="btn btn-primary">View Research</a>
+      <a href="https://www.linkedin.com/in/zhiyuan-cheng-a92018264/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Background</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I graduated with <strong>First Class Honours in Biochemistry</strong> from the University of Manchester, where two years of placement research took me from San Francisco to the Bay Area's leading genome engineering labs.</p>
+        <p>At <strong>Gladstone Institutes</strong>, I worked in Jennifer Doudna's lab to programme SuCas12a2's collateral cleavage activity into a selective cancer-cell killing system — work that contributed to a co-first-author <strong>Nature</strong> publication. At <strong>UCSF</strong>, I used CRISPRi and RNA in situ hybridisation to investigate cardiac regeneration in the Guo Huang Lab.</p>
+        <p>Starting September 2026, I will join the <strong>Francis Crick Institute</strong> (UCL) for my PhD, focusing on how FOXO1 gain-of-function mutations drive liver regeneration and cellular reprogramming in hiPSC models.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">1</div>
+          <div class="stat-desc">Nature Publication</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-desc">Research Labs</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1<sup>st</sup></div>
+          <div class="stat-desc">Class Honours</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Crick</div>
+          <div class="stat-desc">PhD 2026–2030</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <p class="section-label">Research</p>
+    <h2 class="section-title">Selected Projects</h2>
+
+    <div class="research-card">
+      <div class="research-meta">
+        <span class="research-lab">Doudna Lab · Gladstone Institutes</span>
+        <span class="research-date">Dec 2024 – Aug 2025</span>
+      </div>
+      <h3 class="research-title">RNA-Triggered Chromatin Shredding to Eliminate TP53-Mutant Cancer Cells</h3>
+      <div class="research-body">
+        <p>Programmed SuCas12a2's collateral DNA-cleavage activity to selectively kill cancer cells carrying undruggable TP53 mutations.</p>
+        <ul>
+          <li>Engineered SuCas12a2 variants via rational design to boost catalytic activity</li>
+          <li>Designed and optimised lipid nanoparticle (LNP) protocols for in vitro and in vivo mRNA delivery</li>
+          <li>Built a computational pipeline for automated image segmentation and statistical validation</li>
+          <li>Characterised Cas12a2 orthologs via dropout screens to define PFS requirements and PAM/PFS preferences</li>
+        </ul>
+      </div>
+      <div class="tag-row">
+        <span class="tag">CRISPR</span>
+        <span class="tag">Cancer</span>
+        <span class="tag">LNP Delivery</span>
+        <span class="tag">Protein Engineering</span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <div class="research-meta">
+        <span class="research-lab">Huang Lab · UCSF</span>
+        <span class="research-date">Sep – Dec 2024</span>
+      </div>
+      <h3 class="research-title">CRISPRi Dissection of Taco1 in Cardiac Development &amp; Regeneration</h3>
+      <div class="research-body">
+        <p>Investigated the role of Taco1 in cardiomyocyte proliferation using cardiac-specific CRISPRi knockdown and AAV9 delivery in neonatal mouse hearts.</p>
+        <ul>
+          <li>Designed and cloned CRISPRi guide RNAs under a cardiac-specific (cTnT) promoter</li>
+          <li>Packaged constructs into high-titer AAV9 (&gt;5×10¹² vg/µL) and delivered to P1 mouse hearts</li>
+          <li>Quantified cardiomyocyte proliferation, ploidy, and nucleation via immunostaining</li>
+          <li>Applied RNA Scope to examine gene expression asymmetry in bi-nucleated cardiomyocytes</li>
+        </ul>
+      </div>
+      <div class="tag-row">
+        <span class="tag">CRISPRi</span>
+        <span class="tag">Heart Regeneration</span>
+        <span class="tag">AAV9</span>
+        <span class="tag">In Vivo</span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <div class="research-meta">
+        <span class="research-lab">Upcoming · Francis Crick Institute</span>
+        <span class="research-date">Sep 2026 –</span>
+      </div>
+      <h3 class="research-title">FOXO1 Gain-of-Function Mutations in Liver Regeneration &amp; Reprogramming</h3>
+      <div class="research-body">
+        <p>PhD project investigating how FOXO1 S22W gain-of-function mutations influence liver regeneration and cellular reprogramming using human iPSC-derived models. Supervised by Dr Foad Rouhani.</p>
+      </div>
+      <div class="tag-row">
+        <span class="tag">FOXO1</span>
+        <span class="tag">hiPSC</span>
+        <span class="tag">Liver Biology</span>
+        <span class="tag">Reprogramming</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <p class="section-label">Publications</p>
+    <h2 class="section-title">Published Work</h2>
+    <div class="pub-card">
+      <p class="pub-journal">Nature · 2026</p>
+      <h3 class="pub-title">Targeting Cancer-Specific Mutations with RNA-Triggered Chromatin Shredding</h3>
+      <p class="pub-authors">Zeng, J., <span class="me">Cheng, Z.</span>, Chen, H., Wang, Z., Thompson, J., Crosby, K. T., Han, H., Singhal, A., Ngo, W., Xia, C., Rosas-Rivera, D., Zhang, Z., Kang, M. H., Mao, Y., Diolaiti, M. E., Lee, G. C., Diffley, J. F. X., Song, Y., Qiu, L., Krah, N. M., Murthy, N., Jackson, R. N., Liu, Y., Ashworth, A., &amp; Doudna, J. A.</p>
+      <p class="pub-doi"><a href="https://doi.org/10.1038/s41586-026-10738-7" target="_blank" rel="noopener">doi.org/10.1038/s41586-026-10738-7 ↗</a></p>
+      <span class="pub-badge">Co-first Author</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="mailto:Zhiyuan.cheng-3@student.manchester.ac.uk">Email</a>
+      <a href="https://www.linkedin.com/in/zhiyuan-cheng-a92018264/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Zhiyuan_Cheng_CV.pdf" target="_blank">Download CV</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Zhiyuan Cheng. Built with care.</p>
+  </div>
+</footer>
+
+<script>
+  function closeMenu() {
+    document.querySelector('.nav-links').classList.remove('open');
+  }
+</script>
+</body>
+</html>
