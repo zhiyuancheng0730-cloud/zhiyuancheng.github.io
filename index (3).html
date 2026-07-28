@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zhiyuan Cheng | Researcher</title>
+<meta name="description" content="Zhiyuan Cheng — PhD student at the Francis Crick Institute researching FOXO1 gain-of-function in liver regeneration. Second author, Nature (2026).">
+<!-- Open Graph for LinkedIn / social sharing -->
+<meta property="og:title" content="Zhiyuan Cheng | Researcher">
+<meta property="og:description" content="Incoming PhD student at the Francis Crick Institute. Second author, Nature (2026). CRISPR systems, stem cell biology, liver regeneration.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="Art_Picture.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zhiyuan Cheng | Researcher">
+<meta name="twitter:description" content="Incoming PhD student at the Francis Crick Institute. Second author, Nature (2026).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #FAFAF9;
+    --bg-white: #FFFFFF;
+    --bg-warm: #F5F3F0;
+    --accent: #1A5C3A;
+    --accent-light: #2D8F5C;
+    --accent-bg: rgba(26, 92, 58, 0.06);
+    --accent-border: rgba(26, 92, 58, 0.12);
+    --text-dark: #1A1A1A;
+    --text-body: #3D3D3D;
+    --text-secondary: #6B6B6B;
+    --text-muted: #9A9A9A;
+    --border: #E8E5E1;
+    --border-light: #F0EDE9;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans); background: var(--bg);
+    color: var(--text-body); line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection { background: var(--accent); color: #fff; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250, 250, 249, 0.92);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
+    transition: box-shadow 0.3s var(--ease);
+  }
+  nav.scrolled { box-shadow: var(--shadow-sm); }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem; height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--serif); font-weight: 700; font-size: 1.25rem;
+    color: var(--accent); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);
+    text-decoration: none; letter-spacing: 0.04em;
+    transition: color 0.2s; position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1.5px; background: var(--accent);
+    transition: width 0.3s var(--ease);
+  }
+  .nav-links a:hover { color: var(--text-dark); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cv {
+    background: var(--accent) !important; color: #fff !important;
+    padding: 0.45rem 1.1rem; border-radius: 6px;
+    font-size: 0.78rem !important; font-weight: 600 !important;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+  .nav-cv::after { display: none !important; }
+  .nav-cv:hover {
+    background: var(--accent-light) !important;
+    color: #fff !important; transform: translateY(-1px);
+  }
+
+  .hamburger {
+    display: none; background: none; border: none; cursor: pointer;
+    width: 24px; height: 18px; position: relative; z-index: 200;
+  }
+  .hamburger span {
+    display: block; width: 100%; height: 1.5px;
+    background: var(--text-body); position: absolute; left: 0;
+    transition: all 0.3s;
+  }
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 8px; }
+  .hamburger span:nth-child(3) { top: 16px; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+  section { padding: 6rem 0; }
+
+  .section-header { margin-bottom: 3.5rem; }
+  .section-overline {
+    font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.18em; color: var(--accent);
+    margin-bottom: 0.75rem; display: block;
+  }
+  .section-heading {
+    font-family: var(--serif); font-size: 2.25rem;
+    font-weight: 700; color: var(--text-dark);
+    letter-spacing: -0.02em; line-height: 1.2;
+  }
+  .section-divider {
+    width: 48px; height: 2.5px; background: var(--accent);
+    border-radius: 2px; margin-top: 1.25rem;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding-top: 64px; position: relative;
+    background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg) 100%);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 340px;
+    gap: 5rem; align-items: center;
+  }
+  .hero-name {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--text-dark); letter-spacing: -0.03em;
+    line-height: 1.08; margin-bottom: 1.5rem;
+    white-space: nowrap;
+  }
+  .hero-tagline {
+    font-size: 0.92rem; color: var(--accent); font-weight: 500;
+    margin-bottom: 1.75rem; font-style: italic;
+    font-family: var(--serif);
+  }
+  .hero-desc {
+    font-size: 1.05rem; color: var(--text-secondary);
+    line-height: 1.85; margin-bottom: 2.5rem; max-width: 520px;
+    text-align: justify;
+  }
+  .hero-desc strong { color: var(--text-dark); font-weight: 600; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: var(--sans); font-size: 0.82rem; font-weight: 600;
+    padding: 0.8rem 1.75rem; border-radius: 8px;
+    text-decoration: none; transition: all 0.25s var(--ease);
+    cursor: pointer; letter-spacing: 0.02em;
+  }
+  .btn-primary {
+    background: var(--accent); color: #fff; border: none;
+    box-shadow: 0 2px 8px rgba(26, 92, 58, 0.2);
+  }
+  .btn-primary:hover {
+    background: var(--accent-light);
+    box-shadow: 0 4px 16px rgba(26, 92, 58, 0.25);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: var(--bg-white); color: var(--text-dark);
+    border: 1.5px solid var(--border);
+  }
+  .btn-secondary:hover {
+    border-color: var(--accent); color: var(--accent);
+    background: var(--accent-bg);
+  }
+
+  .hero-photo-wrapper {
+    position: relative; display: flex;
+    justify-content: center; align-items: center;
+  }
+  .hero-photo-wrapper::before {
+    content: ''; position: absolute;
+    width: 320px; height: 320px; border-radius: 50%;
+    border: 1px solid var(--accent-border);
+    animation: rotate-slow 30s linear infinite;
+  }
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .hero-photo {
+    width: 290px; height: 290px; border-radius: 50%;
+    object-fit: cover; object-position: center 15%;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid var(--bg-white);
+  }
+
+  /* ── HIGHLIGHTS BAR ── */
+  .highlights {
+    background: var(--bg-white); border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light); padding: 0;
+  }
+  .highlights-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .highlight-item {
+    text-align: center; padding: 2.5rem 1.5rem;
+    border-right: 1px solid var(--border-light);
+  }
+  .highlight-item:last-child { border-right: none; }
+  .highlight-number {
+    font-family: var(--serif); font-size: 2rem;
+    font-weight: 700; color: var(--accent); margin-bottom: 0.25rem;
+  }
+  .highlight-label {
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--text-muted);
+  }
+
+  /* ── ABOUT ── */
+  .about-content {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start;
+  }
+  .about-text { font-size: 1rem; color: var(--text-body); line-height: 1.9; text-align: justify; }
+  .about-text p + p { margin-top: 1.25rem; }
+  .about-text strong { color: var(--text-dark); }
+  .about-sidebar { position: sticky; top: 100px; }
+  .about-detail-group { margin-bottom: 1.75rem; }
+  .about-detail-label {
+    font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 0.4rem;
+  }
+  .about-detail-value {
+    font-size: 0.95rem; color: var(--text-dark); font-weight: 500;
+  }
+  .about-detail-value a {
+    color: var(--accent); text-decoration: none;
+  }
+  .about-detail-value a:hover { text-decoration: underline; }
+  .profile-links {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem;
+  }
+  .profile-link {
+    font-size: 0.78rem; font-weight: 600; padding: 0.35rem 0.85rem;
+    border-radius: 6px; text-decoration: none;
+    background: var(--accent-bg); color: var(--accent);
+    border: 1px solid var(--accent-border);
+    transition: all 0.2s;
+  }
+  .profile-link:hover { background: var(--accent); color: #fff; }
+
+  /* ── RESEARCH ── */
+  #research { background: var(--bg-white); }
+  .research-timeline { position: relative; }
+  .research-timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1.5px; background: var(--border);
+  }
+  .research-entry {
+    position: relative; padding-left: 3rem; margin-bottom: 3.5rem;
+  }
+  .research-entry:last-child { margin-bottom: 0; }
+  .research-entry::before {
+    content: ''; position: absolute; left: -5px; top: 8px;
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--bg-white); border: 2.5px solid var(--accent);
+  }
+  .research-date {
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.4rem;
+  }
+  .research-institution {
+    font-size: 0.8rem; font-weight: 600; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+  .research-card {
+    background: var(--bg); border: 1px solid var(--border-light);
+    border-radius: 12px; padding: 2rem;
+    transition: all 0.3s var(--ease);
+  }
+  .research-card:hover {
+    box-shadow: var(--shadow-md); border-color: var(--accent-border);
+    transform: translateY(-2px);
+  }
+  .research-card h3 {
+    font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
+    color: var(--text-dark); margin-bottom: 0.75rem;
+    line-height: 1.4; letter-spacing: -0.01em;
+  }
+  .research-card p {
+    font-size: 0.92rem; color: var(--text-secondary);
+    line-height: 1.8; margin-bottom: 1rem; text-align: justify;
+  }
+  .research-detail-list {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .research-detail-list li {
+    font-size: 0.88rem; color: var(--text-secondary);
+    padding: 0.35rem 0 0.35rem 1.4rem; position: relative;
+    line-height: 1.65;
+  }
+  .research-detail-list li::before {
+    content: ''; position: absolute; left: 0; top: 0.75em;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent); opacity: 0.4;
+  }
+  .tag-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .tag {
+    font-size: 0.65rem; font-weight: 600; padding: 0.3rem 0.7rem;
+    border-radius: 100px; background: var(--accent-bg);
+    color: var(--accent); text-transform: uppercase;
+    letter-spacing: 0.04em; border: 1px solid var(--accent-border);
+  }
+  .research-links {
+    margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;
+  }
+  .research-link {
+    font-size: 0.78rem; font-weight: 600; padding: 0.5rem 1.1rem;
+    border-radius: 8px; text-decoration: none;
+    background: var(--bg-white); color: var(--text-dark);
+    border: 1.5px solid var(--border);
+    transition: all 0.25s var(--ease);
+  }
+  .research-link:hover {
+    border-color: var(--accent); color: var(--accent); background: var(--accent-bg);
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-card {
+    background: var(--bg-white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s var(--ease); position: relative;
+    overflow: hidden;
+  }
+  .pub-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 4px; background: var(--accent);
+  }
+  .pub-card:hover {
+    box-shadow: var(--shadow-md); transform: translateY(-2px);
+  }
+  .pub-venue {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+  .pub-venue-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); display: inline-block;
+  }
+  .pub-venue-name {
+    font-family: var(--serif); font-size: 1rem; font-weight: 700;
+    font-style: italic; color: var(--accent);
+  }
+  .pub-venue-year {
+    font-size: 0.82rem; color: var(--text-muted); font-weight: 500;
+  }
+  .pub-title {
+    font-family: var(--serif); font-size: 1.2rem; font-weight: 600;
+    color: var(--text-dark); line-height: 1.5;
+    margin-bottom: 1rem; letter-spacing: -0.01em;
+  }
+  .pub-authors {
+    font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .pub-authors .me {
+    color: var(--accent); font-weight: 700;
+    background: var(--accent-bg); padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+  }
+  .pub-footer { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+  .pub-doi a {
+    font-size: 0.82rem; color: var(--accent); text-decoration: none;
+    font-weight: 500; display: inline-flex; align-items: center; gap: 0.3rem;
+  }
+  .pub-doi a:hover { text-decoration: underline; }
+  .pub-badge {
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 0.35rem 0.85rem;
+    border-radius: 100px; background: rgba(26, 92, 58, 0.08);
+    color: var(--accent); border: 1px solid var(--accent-border);
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--bg-white); }
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--bg); border: 1px solid var(--border-light);
+    border-radius: 12px; padding: 2rem;
+    transition: all 0.3s var(--ease);
+  }
+  .skill-card:hover {
+    border-color: var(--accent-border); box-shadow: var(--shadow-sm);
+  }
+  .skill-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--accent-bg); border: 1px solid var(--accent-border);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem; font-size: 1.1rem;
+  }
+  .skill-card h3 {
+    font-size: 0.95rem; font-weight: 700; color: var(--text-dark);
+    margin-bottom: 0.75rem;
+  }
+  .skill-card p {
+    font-size: 0.85rem; color: var(--text-secondary); line-height: 1.75;
+  }
+
+  /* ── AFFILIATIONS ── */
+  .affiliations {
+    background: var(--bg-white); border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light); padding: 3rem 0;
+  }
+  .affil-label {
+    font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.16em; color: var(--text-muted);
+    text-align: center; margin-bottom: 2rem;
+  }
+  .affil-logos {
+    display: flex; justify-content: center; align-items: center;
+    gap: 3rem; flex-wrap: wrap;
+  }
+  .affil-item {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.6rem; opacity: 0.5; transition: opacity 0.3s;
+  }
+  .affil-item:hover { opacity: 0.9; }
+  .affil-item span {
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+    color: var(--text-secondary); letter-spacing: 0.02em;
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 4rem 0; background: var(--text-dark); color: rgba(255,255,255,0.5);
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a {
+    font-size: 0.82rem; font-weight: 500;
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #fff; }
+  .footer-copy { font-size: 0.78rem; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .hero-photo-wrapper { order: -1; }
+    .hero-desc { max-width: 100%; text-align: left; }
+    .hero-actions { justify-content: center; }
+    .about-content { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+    .highlight-item:nth-child(2) { border-right: none; }
+    .highlight-item:nth-child(3),
+    .highlight-item:nth-child(4) { border-top: 1px solid var(--border-light); }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column; gap: 0;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: rgba(250, 250, 249, 0.98);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+    }
+    .nav-links.open a {
+      display: block; padding: 1rem 2.5rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .nav-links.open a::after { display: none; }
+    .nav-cv { display: inline-block !important; margin: 1rem 2.5rem; }
+    .container { padding: 0 1.5rem; }
+    .nav-inner { padding: 0 1.5rem; }
+    section { padding: 4rem 0; }
+    .section-heading { font-size: 1.8rem; }
+    .hero-photo { width: 220px; height: 220px; }
+    .hero-photo-wrapper::before { width: 250px; height: 250px; }
+    .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+  }
+  @media (max-width: 480px) {
+    .highlights-grid { grid-template-columns: 1fr 1fr; }
+    .pub-card { padding: 1.75rem; }
+    .hero-name { font-size: 1.6rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Zhiyuan Cheng</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#research" onclick="closeMenu()">Research</a></li>
+      <li><a href="#publications" onclick="closeMenu()">Publications</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+
+      <li><a href="Zhiyuan_Cheng_CV.pdf" target="_blank" class="nav-cv" onclick="closeMenu()">Download CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-name">Zhiyuan Cheng (程致元)</h1>
+        <p class="hero-tagline">Exploring how cells regenerate, reprogram, and resist disease</p>
+        <p class="hero-desc">
+          Incoming PhD student at the <strong>Francis Crick Institute</strong>, investigating how FOXO1 gain-of-function mutations drive liver regeneration and cellular reprogramming. Second author of a <strong>Nature</strong> paper on RNA-triggered chromatin shredding, developed in Jennifer Doudna's lab at the Gladstone Institutes.
+        </p>
+        <div class="hero-actions">
+          <a href="#research" class="btn btn-primary">View Research</a>
+          <a href="https://www.linkedin.com/in/zhiyuan-cheng-a92018264/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+          <a href="mailto:zhiyuancheng0730@gmail.com" class="btn btn-secondary">Contact</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrapper">
+        <img src="Art_Picture.jpg" alt="Zhiyuan Cheng" class="hero-photo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+  <div class="container">
+    <div class="highlights-grid">
+      <div class="highlight-item">
+        <div class="highlight-number">Nature</div>
+        <div class="highlight-label">Second Author</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-number">Crick</div>
+        <div class="highlight-label">PhD 2026 – 2030</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-number">1st</div>
+        <div class="highlight-label">Class Honours · Manchester</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-number">2</div>
+        <div class="highlight-label">Research Labs · US</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-overline">About</span>
+      <h2 class="section-heading">Background</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>My research sits at the intersection of <strong>CRISPR genome engineering</strong>, <strong>stem cell biology</strong>, and <strong>regenerative medicine</strong>. I am drawn to questions about how cells sense damage, make fate decisions, and — in some tissues — rebuild what was lost.</p>
+        <p>I graduated with <strong>First Class Honours in Biochemistry</strong> from the University of Manchester. During two years of research placements in the US, I gained hands-on experience across genome engineering, gene delivery, and cardiac biology in two leading labs.</p>
+        <p>At the <strong>Gladstone Institutes</strong>, I worked in Jennifer Doudna's lab to programme SuCas12a2's collateral cleavage activity into a selective cancer-cell killing platform — engineering protein variants, optimising lipid nanoparticle delivery, and building computational image analysis pipelines. At <strong>UCSF</strong>, I used CRISPRi and AAV9 delivery in neonatal mouse hearts to investigate Taco1's role in cardiac development.</p>
+        <p>Starting September 2026, I will join the <strong><a href="https://www.crick.ac.uk/research/labs/foad-rouhani" target="_blank" rel="noopener">Rouhani Lab</a></strong> at the Francis Crick Institute for my PhD, investigating how FOXO1 S22W gain-of-function mutations influence liver regeneration and cellular reprogramming using human iPSC-derived models.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="about-detail-group">
+          <div class="about-detail-label">Institution</div>
+          <div class="about-detail-value"><a href="https://www.crick.ac.uk" target="_blank" rel="noopener">Francis Crick Institute</a></div>
+        </div>
+        <div class="about-detail-group">
+          <div class="about-detail-label">Degree Provider</div>
+          <div class="about-detail-value">University College London</div>
+        </div>
+        <div class="about-detail-group">
+          <div class="about-detail-label">Supervisor</div>
+          <div class="about-detail-value"><a href="https://www.crick.ac.uk/research/find-a-researcher/foad-rouhani" target="_blank" rel="noopener">Dr Foad Rouhani</a></div>
+        </div>
+        <div class="about-detail-group">
+          <div class="about-detail-label">Undergraduate</div>
+          <div class="about-detail-value">BSc Biochemistry, Manchester</div>
+        </div>
+        <div class="about-detail-group">
+          <div class="about-detail-label">Email</div>
+          <div class="about-detail-value"><a href="mailto:zhiyuancheng0730@gmail.com">zhiyuancheng0730@gmail.com</a></div>
+        </div>
+        <div class="about-detail-group">
+          <div class="about-detail-label">Profiles</div>
+          <div class="profile-links">
+            <a href="https://www.linkedin.com/in/zhiyuan-cheng-a92018264/" target="_blank" rel="noopener" class="profile-link">LinkedIn</a>
+            <a href="https://github.com/zhiyuancheng0730-cloud" target="_blank" rel="noopener" class="profile-link">GitHub</a>
+            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=uX7pub4AAAAJ" target="_blank" rel="noopener" class="profile-link">Google Scholar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-overline">Research</span>
+      <h2 class="section-heading">Selected Projects</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="research-timeline">
+
+      <div class="research-entry">
+        <div class="research-date">Starting Sep 2026</div>
+        <div class="research-institution">Francis Crick Institute · Rouhani Lab</div>
+        <div class="research-card">
+          <h3>FOXO1 Gain-of-Function Mutations in Liver Regeneration &amp; Reprogramming</h3>
+          <p>PhD project investigating how FOXO1 S22W gain-of-function mutations influence liver regeneration and cellular reprogramming using human iPSC-derived hepatocyte models. Supervised by Dr Foad Rouhani.</p>
+          <div class="tag-row">
+            <span class="tag">FOXO1</span>
+            <span class="tag">hiPSC</span>
+            <span class="tag">Liver Biology</span>
+            <span class="tag">Reprogramming</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-entry">
+        <div class="research-date">Dec 2024 – Aug 2025</div>
+        <div class="research-institution">Gladstone Institutes · Doudna Lab</div>
+        <div class="research-card">
+          <h3>RNA-Triggered Chromatin Shredding to Eliminate TP53-Mutant Cancer Cells</h3>
+          <p>Programmed SuCas12a2's collateral DNA-cleavage activity to selectively kill cancer cells carrying undruggable TP53 mutations.</p>
+          <ul class="research-detail-list">
+            <li>Engineered SuCas12a2 variants via rational design to boost catalytic activity</li>
+            <li>Designed and optimised lipid nanoparticle (LNP) protocols for in vitro and in vivo mRNA delivery</li>
+            <li>Built a computational pipeline for automated image segmentation and statistical validation</li>
+            <li>Characterised Cas12a2 orthologs via dropout screens to define PFS requirements and PAM/PFS preferences</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">CRISPR</span>
+            <span class="tag">Cancer Therapeutics</span>
+            <span class="tag">LNP Delivery</span>
+            <span class="tag">Protein Engineering</span>
+          </div>
+          <div class="research-links">
+            <a href="https://drive.google.com/file/d/1pUOCGwhLw58nVrzIcO5V_uavf0wQHd-N/view" target="_blank" rel="noopener" class="research-link">Read Full Placement Report →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-entry">
+        <div class="research-date">Sep – Dec 2024</div>
+        <div class="research-institution">UCSF · Huang Lab</div>
+        <div class="research-card">
+          <h3>CRISPRi Dissection of Taco1 in Cardiac Development &amp; Regeneration</h3>
+          <p>Investigated the role of Taco1 in cardiomyocyte proliferation using cardiac-specific CRISPRi knockdown and AAV9 delivery in neonatal mouse hearts.</p>
+          <ul class="research-detail-list">
+            <li>Designed and cloned CRISPRi guide RNAs under a cardiac-specific (cTnT) promoter</li>
+            <li>Packaged constructs into high-titer AAV9 (&gt;5×10¹² vg/µL) and delivered to P1 mouse hearts</li>
+            <li>Quantified cardiomyocyte proliferation, ploidy, and nucleation via immunostaining</li>
+            <li>Applied RNA Scope to examine gene expression asymmetry in bi-nucleated cardiomyocytes</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">CRISPRi</span>
+            <span class="tag">Heart Regeneration</span>
+            <span class="tag">AAV9</span>
+            <span class="tag">In Vivo</span>
+          </div>
+          <div class="research-links">
+            <a href="https://docs.google.com/presentation/d/1yrw3_YZbvAaRgDdFHevPnqYFf2lmZEPU/edit?usp=sharing&ouid=108417928867411578345&rtpof=true&sd=true" target="_blank" rel="noopener" class="research-link">View Placement Presentation →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS & PRESENTATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-overline">Publications</span>
+      <h2 class="section-heading">Published Work</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="pub-card">
+      <div class="pub-venue">
+        <span class="pub-venue-dot"></span>
+        <span class="pub-venue-name">Nature</span>
+        <span class="pub-venue-year">· 2026</span>
+      </div>
+      <h3 class="pub-title">Targeting Cancer-Specific Mutations with RNA-Triggered Chromatin Shredding</h3>
+      <p class="pub-authors">Zeng, J., <span class="me">Cheng, Z.</span>, Chen, H., Wang, Z., Thompson, J., Crosby, K. T., Han, H., Singhal, A., Ngo, W., Xia, C., Rosas-Rivera, D., Zhang, Z., Kang, M. H., Mao, Y., Diolaiti, M. E., Lee, G. C., Diffley, J. F. X., Song, Y., Qiu, L., Krah, N. M., Murthy, N., Jackson, R. N., Liu, Y., Ashworth, A., &amp; Doudna, J. A.</p>
+      <div class="pub-footer">
+        <span class="pub-badge">Second Author</span>
+        <span class="pub-doi"><a href="https://doi.org/10.1038/s41586-026-10738-7" target="_blank" rel="noopener">doi.org/10.1038/s41586-026-10738-7 →</a></span>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-overline">Expertise</span>
+      <h2 class="section-heading">Technical Skills</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🧬</div>
+        <h3>Molecular Biology</h3>
+        <p>PCR, qPCR, cloning, site-directed mutagenesis, transfection, transformation, RNA extraction, Western blotting, in vitro transcription, and CRISPR interference.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔬</div>
+        <h3>Cell Biology</h3>
+        <p>Cell culture, immunofluorescence, cryosectioning, lentivirus and AAV packaging, iPSC maintenance, lipid nanoparticle formulation, and RNA in situ hybridisation.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <h3>Imaging &amp; Analysis</h3>
+        <p>Fiji macro programming, Ilastik training, IncuCyte live cell imaging, GraphPad Prism, BLAST, sequence alignment, and automated image quantification pipelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- AFFILIATIONS -->
+<section class="affiliations">
+  <div class="container">
+    <div class="affil-label">Affiliated Institutions</div>
+    <div class="affil-logos">
+      <div class="affil-item">
+        <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4C17 4 14 8 13 14C12 20 13 28 16 33" stroke="#2E2D4D" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M20 4C23 4 26 8 27 14C28 20 27 28 24 33" stroke="#2E2D4D" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <line x1="12" y1="14" x2="28" y2="14" stroke="#2E2D4D" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="11.5" y1="20" x2="28.5" y2="20" stroke="#2E2D4D" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="12" y1="26" x2="28" y2="26" stroke="#2E2D4D" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>Francis Crick Institute</span>
+      </div>
+      <div class="affil-item">
+        <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="12" width="28" height="3" rx="1" fill="#0E2050"/>
+          <rect x="10" y="15" width="3" height="16" fill="#0E2050"/>
+          <rect x="18.5" y="15" width="3" height="16" fill="#0E2050"/>
+          <rect x="27" y="15" width="3" height="16" fill="#0E2050"/>
+          <rect x="6" y="31" width="28" height="3" rx="1" fill="#0E2050"/>
+          <polygon points="20,4 8,12 32,12" fill="#0E2050"/>
+        </svg>
+        <span>UCL</span>
+      </div>
+      <div class="affil-item">
+        <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 3L6 12V30L20 37L34 30V12Z" stroke="#660099" stroke-width="2" fill="none"/>
+          <path d="M20 3L6 12L20 18L34 12Z" fill="#660099" opacity="0.15"/>
+          <line x1="20" y1="18" x2="20" y2="37" stroke="#660099" stroke-width="1.5"/>
+          <circle cx="20" cy="24" r="3.5" stroke="#660099" stroke-width="1.5" fill="none"/>
+        </svg>
+        <span>University of Manchester</span>
+      </div>
+      <div class="affil-item">
+        <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="14" stroke="#003D7C" stroke-width="2" fill="none"/>
+          <path d="M15 20C15 15 17 12 20 12C23 12 25 15 25 20C25 25 23 28 20 28" stroke="#003D7C" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <line x1="20" y1="20" x2="26" y2="20" stroke="#003D7C" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Gladstone Institutes</span>
+      </div>
+      <div class="affil-item">
+        <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="14" stroke="#003262" stroke-width="2" fill="none"/>
+          <circle cx="20" cy="20" r="10" stroke="#003262" stroke-width="1.2" fill="none"/>
+          <path d="M14 16L20 10L26 16" stroke="#003262" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <line x1="20" y1="10" x2="20" y2="30" stroke="#003262" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M14 24L20 30L26 24" stroke="#003262" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span>UCSF</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="mailto:zhiyuancheng0730@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/zhiyuan-cheng-a92018264/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/zhiyuancheng0730-cloud" target="_blank" rel="noopener">GitHub</a>
+        <a href="Zhiyuan_Cheng_CV.pdf" target="_blank">Download CV</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Zhiyuan Cheng</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function closeMenu() { document.querySelector('.nav-links').classList.remove('open'); }
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+</script>
+</body>
+</html>
