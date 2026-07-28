@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zhiyuan Cheng | Researcher</title>
+<meta name="description" content="Zhiyuan Cheng, PhD student at the Francis Crick Institute researching FOXO1 gain-of-function in liver regeneration. Second author, Nature (2026).">
+<meta property="og:title" content="Zhiyuan Cheng | Researcher">
+<meta property="og:description" content="Incoming PhD student at the Francis Crick Institute. Second author, Nature (2026). CRISPR systems, stem cell biology, liver regeneration.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="Art_Picture.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #FAFAF9; --bg-white: #FFFFFF; --bg-warm: #F5F3F0;
+    --accent: #1A5C3A; --accent-light: #2D8F5C;
+    --accent-bg: rgba(26,92,58,0.06); --accent-border: rgba(26,92,58,0.12);
+    --text-dark: #1A1A1A; --text-body: #3D3D3D;
+    --text-secondary: #6B6B6B; --text-muted: #9A9A9A;
+    --border: #E8E5E1; --border-light: #F0EDE9;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--text-body); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,249,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-light); transition: box-shadow 0.3s var(--ease); }
+  nav.scrolled { box-shadow: var(--shadow-sm); }
+  .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 64px; }
+  .nav-logo { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: var(--accent); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; position: relative; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.3s var(--ease); }
+  .nav-links a:hover { color: var(--text-dark); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cv { background: var(--accent) !important; color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 0.78rem !important; font-weight: 600 !important; transition: background 0.2s, transform 0.2s !important; }
+  .nav-cv::after { display: none !important; }
+  .nav-cv:hover { background: var(--accent-light) !important; color: #fff !important; transform: translateY(-1px); }
+
+  /* LANG SWITCHER */
+  .lang-switcher { position: relative; }
+  .lang-btn { background: var(--bg); border: 1.5px solid var(--border); border-radius: 6px; padding: 0.35rem 0.7rem; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; gap: 0.35rem; transition: all 0.2s; }
+  .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .lang-btn svg { width: 14px; height: 14px; }
+  .lang-dropdown { position: absolute; top: calc(100% + 6px); right: 0; background: var(--bg-white); border: 1px solid var(--border); border-radius: 8px; box-shadow: var(--shadow-md); display: none; min-width: 140px; overflow: hidden; z-index: 200; }
+  .lang-dropdown.open { display: block; }
+  .lang-option { display: block; width: 100%; padding: 0.6rem 1rem; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; color: var(--text-body); background: none; border: none; text-align: left; cursor: pointer; transition: background 0.15s; }
+  .lang-option:hover { background: var(--accent-bg); }
+  .lang-option.active { color: var(--accent); font-weight: 700; }
+
+  .hamburger { display: none; background: none; border: none; cursor: pointer; width: 24px; height: 18px; position: relative; z-index: 200; }
+  .hamburger span { display: block; width: 100%; height: 1.5px; background: var(--text-body); position: absolute; left: 0; transition: all 0.3s; }
+  .hamburger span:nth-child(1) { top: 0; } .hamburger span:nth-child(2) { top: 8px; } .hamburger span:nth-child(3) { top: 16px; }
+
+  /* LAYOUT */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  section { padding: 6rem 0; }
+  .section-header { margin-bottom: 3.5rem; }
+  .section-overline { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 0.75rem; display: block; }
+  .section-heading { font-family: var(--serif); font-size: 2.25rem; font-weight: 700; color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.2; }
+  .section-divider { width: 48px; height: 2.5px; background: var(--accent); border-radius: 2px; margin-top: 1.25rem; }
+
+  /* HERO */
+  .hero { min-height: calc(100vh - 64px); display: flex; align-items: center; padding: 2rem 0; position: relative; background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg) 100%); }
+  .hero-grid { display: grid; grid-template-columns: 1fr 340px; gap: 5rem; align-items: center; }
+  .hero-name { font-family: var(--serif); font-weight: 700; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--text-dark); letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 1.5rem; white-space: nowrap; }
+  .hero-tagline { font-size: 0.92rem; color: var(--accent); font-weight: 500; margin-bottom: 1.75rem; font-style: italic; font-family: var(--serif); }
+  .hero-desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2.5rem; max-width: 520px; text-align: justify; }
+  .hero-desc strong { color: var(--text-dark); font-weight: 600; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; padding: 0.8rem 1.75rem; border-radius: 8px; text-decoration: none; transition: all 0.25s var(--ease); cursor: pointer; letter-spacing: 0.02em; }
+  .btn-primary { background: var(--accent); color: #fff; border: none; box-shadow: 0 2px 8px rgba(26,92,58,0.2); }
+  .btn-primary:hover { background: var(--accent-light); box-shadow: 0 4px 16px rgba(26,92,58,0.25); transform: translateY(-1px); }
+  .btn-secondary { background: var(--bg-white); color: var(--text-dark); border: 1.5px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+  .hero-photo-wrapper { position: relative; display: flex; justify-content: center; align-items: center; }
+  .hero-photo-wrapper::before { content: ''; position: absolute; width: 320px; height: 320px; border-radius: 50%; border: 1px solid var(--accent-border); animation: rotate-slow 30s linear infinite; }
+  @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  .hero-photo { width: 290px; height: 290px; border-radius: 50%; object-fit: cover; object-position: center 15%; box-shadow: var(--shadow-lg); border: 4px solid var(--bg-white); }
+
+  /* HIGHLIGHTS */
+  .highlights { background: var(--bg-white); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 0; }
+  .highlights-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .highlight-item { text-align: center; padding: 2.5rem 1.5rem; border-right: 1px solid var(--border-light); }
+  .highlight-item:last-child { border-right: none; }
+  .highlight-number { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem; }
+  .highlight-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); }
+
+  /* ABOUT */
+  .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
+  .about-text { font-size: 1rem; color: var(--text-body); line-height: 1.9; text-align: justify; }
+  .about-text p + p { margin-top: 1.25rem; }
+  .about-text strong { color: var(--text-dark); }
+  .about-sidebar { position: sticky; top: 100px; }
+  .about-detail-group { margin-bottom: 1.75rem; }
+  .about-detail-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 0.4rem; }
+  .about-detail-value { font-size: 0.95rem; color: var(--text-dark); font-weight: 500; }
+  .about-detail-value a { color: var(--accent); text-decoration: none; }
+  .about-detail-value a:hover { text-decoration: underline; }
+  .profile-links { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+  .profile-link { font-size: 0.78rem; font-weight: 600; padding: 0.35rem 0.85rem; border-radius: 6px; text-decoration: none; background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent-border); transition: all 0.2s; }
+  .profile-link:hover { background: var(--accent); color: #fff; }
+
+  /* RESEARCH */
+  #research { background: var(--bg-white); }
+  .research-timeline { position: relative; }
+  .research-timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1.5px; background: var(--border); }
+  .research-entry { position: relative; padding-left: 3rem; margin-bottom: 3.5rem; }
+  .research-entry:last-child { margin-bottom: 0; }
+  .research-entry::before { content: ''; position: absolute; left: -5px; top: 8px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg-white); border: 2.5px solid var(--accent); }
+  .research-date { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.4rem; }
+  .research-institution { font-size: 0.8rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  .research-card { background: var(--bg); border: 1px solid var(--border-light); border-radius: 12px; padding: 2rem; transition: all 0.3s var(--ease); }
+  .research-card:hover { box-shadow: var(--shadow-md); border-color: var(--accent-border); transform: translateY(-2px); }
+  .research-card h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.75rem; line-height: 1.4; }
+  .research-card p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; text-align: justify; }
+  .research-detail-list { list-style: none; padding: 0; margin: 0; }
+  .research-detail-list li { font-size: 0.88rem; color: var(--text-secondary); padding: 0.35rem 0 0.35rem 1.4rem; position: relative; line-height: 1.65; }
+  .research-detail-list li::before { content: ''; position: absolute; left: 0; top: 0.75em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.4; }
+  .tag-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1.25rem; }
+  .tag { font-size: 0.65rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 100px; background: var(--accent-bg); color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; border: 1px solid var(--accent-border); }
+  .research-links { margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .research-link { font-size: 0.78rem; font-weight: 600; padding: 0.5rem 1.1rem; border-radius: 8px; text-decoration: none; background: var(--bg-white); color: var(--text-dark); border: 1.5px solid var(--border); transition: all 0.25s var(--ease); }
+  .research-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+  /* PUBLICATIONS */
+  .pub-card { background: var(--bg-white); border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem; box-shadow: var(--shadow-sm); transition: all 0.3s var(--ease); position: relative; overflow: hidden; }
+  .pub-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); }
+  .pub-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .pub-venue { display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; }
+  .pub-venue-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; }
+  .pub-venue-name { font-family: var(--serif); font-size: 1rem; font-weight: 700; font-style: italic; color: var(--accent); }
+  .pub-venue-year { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+  .pub-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--text-dark); line-height: 1.5; margin-bottom: 1rem; }
+  .pub-authors { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.25rem; }
+  .pub-authors .me { color: var(--accent); font-weight: 700; background: var(--accent-bg); padding: 0.1rem 0.4rem; border-radius: 3px; }
+  .pub-footer { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+  .pub-doi a { font-size: 0.82rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+  .pub-doi a:hover { text-decoration: underline; }
+  .pub-badge { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.35rem 0.85rem; border-radius: 100px; background: rgba(26,92,58,0.08); color: var(--accent); border: 1px solid var(--accent-border); }
+
+  /* SKILLS */
+  #skills { background: var(--bg-white); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .skill-card { background: var(--bg); border: 1px solid var(--border-light); border-radius: 12px; padding: 2rem; transition: all 0.3s var(--ease); }
+  .skill-card:hover { border-color: var(--accent-border); box-shadow: var(--shadow-sm); }
+  .skill-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-bg); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; font-size: 1.1rem; }
+  .skill-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.75rem; }
+  .skill-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.75; }
+
+  /* AFFILIATIONS */
+  .affiliations { background: var(--bg-white); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 3rem 0; }
+  .affil-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); text-align: center; margin-bottom: 2rem; }
+  .affil-logos { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
+  .affil-item { display: flex; align-items: center; justify-content: center; opacity: 0.55; transition: opacity 0.3s; text-decoration: none; }
+  .affil-item:hover { opacity: 1; }
+  .affil-item img { height: 40px; width: auto; object-fit: contain; }
+  .affil-item img[alt="Francis Crick Institute"], .affil-item img[alt="University of Manchester"], .affil-item img[alt="UCSF"] { height: 55px; }
+
+  /* FOOTER */
+  footer { padding: 4rem 0; background: var(--text-dark); color: rgba(255,255,255,0.5); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-copy { font-size: 0.78rem; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .hero-photo-wrapper { order: -1; }
+    .hero-desc { max-width: 100%; text-align: left; }
+    .hero-actions { justify-content: center; }
+    .about-content { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+    .highlight-item:nth-child(2) { border-right: none; }
+    .highlight-item:nth-child(3), .highlight-item:nth-child(4) { border-top: 1px solid var(--border-light); }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .nav-links.open { display: flex; flex-direction: column; gap: 0; position: absolute; top: 64px; left: 0; right: 0; background: rgba(250,250,249,0.98); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-links.open a { display: block; padding: 1rem 2rem; border-bottom: 1px solid var(--border-light); }
+    .nav-links.open a::after { display: none; }
+    .nav-cv { display: inline-block !important; margin: 1rem 2rem; }
+    .container { padding: 0 1.25rem; }
+    .nav-inner { padding: 0 1.25rem; }
+    section { padding: 4rem 0; }
+    .section-heading { font-size: 1.8rem; }
+    .hero-photo { width: 220px; height: 220px; }
+    .hero-photo-wrapper::before { width: 250px; height: 250px; }
+    .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+  }
+  @media (max-width: 480px) { .highlights-grid { grid-template-columns: 1fr 1fr; } .pub-card { padding: 1.75rem; } .hero-name { font-size: 1.6rem; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Zhiyuan Cheng</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about" onclick="closeMenu()" data-i18n="nav_about">About</a></li>
+      <li><a href="#research" onclick="closeMenu()" data-i18n="nav_research">Research</a></li>
+      <li><a href="#publications" onclick="closeMenu()" data-i18n="nav_publications">Publications</a></li>
+      <li><a href="#skills" onclick="closeMenu()" data-i18n="nav_skills">Skills</a></li>
+      <li><a href="Zhiyuan_Cheng_CV.pdf" target="_blank" class="nav-cv" onclick="closeMenu()" data-i18n="nav_cv">Download CV</a></li>
+      <li class="lang-switcher">
+        <button class="lang-btn" onclick="toggleLangMenu()" aria-label="Change language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+          <span id="currentLang">EN</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="lang-option active" onclick="setLang('en')">English</button>
+          <button class="lang-option" onclick="setLang('zh')">中文</button>
+          <button class="lang-option" onclick="setLang('es')">Español</button>
+          <button class="lang-option" onclick="setLang('fr')">Français</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-name">Zhiyuan Cheng (程致元)</h1>
+        <p class="hero-tagline" data-i18n="hero_tagline">Exploring how cells regenerate, reprogram, and resist disease</p>
+        <p class="hero-desc" data-i18n="hero_desc">Incoming PhD student at the <strong>Francis Crick Institute</strong>, investigating how FOXO1 gain-of-function mutations drive liver regeneration and cellular reprogramming. Second author of a <strong>Nature</strong> paper on RNA-triggered chromatin shredding, developed in Jennifer Doudna's lab at the Gladstone Institutes.</p>
+        <div class="hero-actions">
+          <a href="#research" class="btn btn-primary" data-i18n="hero_btn_research">View Research</a>
+          <a href="https://www.linkedin.com/in/zhiyuan-cheng-a92018264/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+          <a href="mailto:zhiyuancheng0730@gmail.com" class="btn btn-secondary" data-i18n="hero_btn_contact">Contact</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrapper">
+        <img src="Art_Picture.jpg" alt="Zhiyuan Cheng" class="hero-photo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlights">
+  <div class="container">
+    <div class="highlights-grid">
+      <div class="highlight-item"><div class="highlight-number">Nature</div><div class="highlight-label" data-i18n="hl_nature">Second Author</div></div>
+      <div class="highlight-item"><div class="highlight-number">Crick</div><div class="highlight-label">PhD 2026 – 2030</div></div>
+      <div class="highlight-item"><div class="highlight-number">1st</div><div class="highlight-label" data-i18n="hl_honours">Class Honours · Manchester</div></div>
+      <div class="highlight-item"><div class="highlight-number">2</div><div class="highlight-label" data-i18n="hl_labs">Research Labs · US</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-overline" data-i18n="nav_about">About</span>
+      <h2 class="section-heading" data-i18n="about_heading">Background</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p data-i18n="about_p1">My research sits at the intersection of <strong>CRISPR genome engineering</strong>, <strong>stem cell biology</strong>, and <strong>regenerative medicine</strong>. I am drawn to questions about how cells sense damage, make fate decisions, and in some tissues, rebuild what was lost.</p>
+        <p data-i18n="about_p2">I graduated with <strong>First Class Honours in Biochemistry</strong> from the University of Manchester. During a year-long research placement in the US, I gained hands-on experience across genome engineering, gene delivery, and cardiac biology in two leading labs.</p>
+        <p data-i18n="about_p3">At the <strong>Gladstone Institutes</strong>, I worked in Jennifer Doudna's lab to programme SuCas12a2's collateral cleavage activity into a selective cancer-cell killing platform, engineering protein variants, optimising lipid nanoparticle delivery, and building computational image analysis pipelines. At <strong>UCSF</strong>, I used CRISPRi and AAV9 delivery in neonatal mouse hearts to investigate Taco1's role in cardiac development.</p>
+        <p data-i18n="about_p4">Starting September 2026, I will join the <strong><a href="https://www.crick.ac.uk/research/labs/foad-rouhani" target="_blank" rel="noopener">Rouhani Lab</a></strong> at the Francis Crick Institute for my PhD, investigating how FOXO1 S22W gain-of-function mutations influence liver regeneration and cellular reprogramming using human iPSC-derived models.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="about-detail-group"><div class="about-detail-label" data-i18n="sidebar_institution">Institution</div><div class="about-detail-value"><a href="https://www.crick.ac.uk" target="_blank" rel="noopener">Francis Crick Institute</a></div></div>
+        <div class="about-detail-group"><div class="about-detail-label" data-i18n="sidebar_degree">Degree Provider</div><div class="about-detail-value">University College London</div></div>
+        <div class="about-detail-group"><div class="about-detail-label" data-i18n="sidebar_supervisor">Supervisor</div><div class="about-detail-value"><a href="https://www.crick.ac.uk/research/find-a-researcher/foad-rouhani" target="_blank" rel="noopener">Dr Foad Rouhani</a></div></div>
+        <div class="about-detail-group"><div class="about-detail-label" data-i18n="sidebar_undergrad">Undergraduate</div><div class="about-detail-value">BSc Biochemistry, Manchester</div></div>
+        <div class="about-detail-group"><div class="about-detail-label" data-i18n="sidebar_email">Email</div><div class="about-detail-value"><a href="mailto:zhiyuancheng0730@gmail.com">zhiyuancheng0730@gmail.com</a></div></div>
+        <div class="about-detail-group"><div class="about-detail-label" data-i18n="sidebar_profiles">Profiles</div>
+          <div class="profile-links">
+            <a href="https://www.linkedin.com/in/zhiyuan-cheng-a92018264/" target="_blank" rel="noopener" class="profile-link">LinkedIn</a>
+            <a href="https://github.com/zhiyuancheng0730-cloud" target="_blank" rel="noopener" class="profile-link">GitHub</a>
+            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=uX7pub4AAAAJ" target="_blank" rel="noopener" class="profile-link">Google Scholar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-overline" data-i18n="nav_research">Research</span>
+      <h2 class="section-heading" data-i18n="research_heading">Selected Projects</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="research-timeline">
+      <div class="research-entry">
+        <div class="research-date" data-i18n="r1_date">Starting Sep 2026</div>
+        <div class="research-institution">Francis Crick Institute · Rouhani Lab</div>
+        <div class="research-card">
+          <h3 data-i18n="r1_title">FOXO1 Gain-of-Function Mutations in Liver Regeneration &amp; Reprogramming</h3>
+          <p data-i18n="r1_desc">PhD project investigating how FOXO1 S22W gain-of-function mutations influence liver regeneration and cellular reprogramming using human iPSC-derived hepatocyte models. Supervised by Dr Foad Rouhani.</p>
+          <div class="tag-row"><span class="tag">FOXO1</span><span class="tag">hiPSC</span><span class="tag">Liver Biology</span><span class="tag">Reprogramming</span></div>
+        </div>
+      </div>
+      <div class="research-entry">
+        <div class="research-date">Dec 2024 – Aug 2025</div>
+        <div class="research-institution">Gladstone Institutes · Doudna Lab</div>
+        <div class="research-card">
+          <h3 data-i18n="r2_title">RNA-Triggered Chromatin Shredding to Eliminate TP53-Mutant Cancer Cells</h3>
+          <p data-i18n="r2_desc">Programmed SuCas12a2's collateral DNA-cleavage activity to selectively kill cancer cells carrying undruggable TP53 mutations.</p>
+          <ul class="research-detail-list">
+            <li data-i18n="r2_li1">Engineered SuCas12a2 variants via rational design to boost catalytic activity</li>
+            <li data-i18n="r2_li2">Designed and optimised lipid nanoparticle (LNP) protocols for in vitro and in vivo mRNA delivery</li>
+            <li data-i18n="r2_li3">Built a computational pipeline for automated image segmentation and statistical validation</li>
+            <li data-i18n="r2_li4">Characterised Cas12a2 orthologs via dropout screens to define PFS requirements and PAM/PFS preferences</li>
+          </ul>
+          <div class="tag-row"><span class="tag">CRISPR</span><span class="tag">Cancer Therapeutics</span><span class="tag">LNP Delivery</span><span class="tag">Protein Engineering</span></div>
+          <div class="research-links"><a href="https://drive.google.com/file/d/1pUOCGwhLw58nVrzIcO5V_uavf0wQHd-N/view" target="_blank" rel="noopener" class="research-link" data-i18n="link_report">Read Full Placement Report →</a></div>
+        </div>
+      </div>
+      <div class="research-entry">
+        <div class="research-date">Sep – Dec 2024</div>
+        <div class="research-institution">UCSF · Huang Lab</div>
+        <div class="research-card">
+          <h3 data-i18n="r3_title">CRISPRi Dissection of Taco1 in Cardiac Development &amp; Regeneration</h3>
+          <p data-i18n="r3_desc">Investigated the role of Taco1 in cardiomyocyte proliferation using cardiac-specific CRISPRi knockdown and AAV9 delivery in neonatal mouse hearts.</p>
+          <ul class="research-detail-list">
+            <li data-i18n="r3_li1">Designed and cloned CRISPRi guide RNAs under a cardiac-specific (cTnT) promoter</li>
+            <li data-i18n="r3_li2">Packaged constructs into high-titer AAV9 (&gt;5×10¹² vg/µL) and delivered to P1 mouse hearts</li>
+            <li data-i18n="r3_li3">Quantified cardiomyocyte proliferation, ploidy, and nucleation via immunostaining</li>
+            <li data-i18n="r3_li4">Applied RNA Scope to examine gene expression asymmetry in bi-nucleated cardiomyocytes</li>
+          </ul>
+          <div class="tag-row"><span class="tag">CRISPRi</span><span class="tag">Heart Regeneration</span><span class="tag">AAV9</span><span class="tag">In Vivo</span></div>
+          <div class="research-links"><a href="https://docs.google.com/presentation/d/1yrw3_YZbvAaRgDdFHevPnqYFf2lmZEPU/edit?usp=sharing&ouid=108417928867411578345&rtpof=true&sd=true" target="_blank" rel="noopener" class="research-link" data-i18n="link_pres">View Placement Presentation →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-overline" data-i18n="nav_publications">Publications</span>
+      <h2 class="section-heading" data-i18n="pub_heading">Published Work</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="pub-card">
+      <div class="pub-venue"><span class="pub-venue-dot"></span><span class="pub-venue-name">Nature</span><span class="pub-venue-year">· 2026</span></div>
+      <h3 class="pub-title">Targeting Cancer-Specific Mutations with RNA-Triggered Chromatin Shredding</h3>
+      <p class="pub-authors">Zeng, J., <span class="me">Cheng, Z.</span>, Chen, H., Wang, Z., Thompson, J., Crosby, K. T., Han, H., Singhal, A., Ngo, W., Xia, C., Rosas-Rivera, D., Zhang, Z., Kang, M. H., Mao, Y., Diolaiti, M. E., Lee, G. C., Diffley, J. F. X., Song, Y., Qiu, L., Krah, N. M., Murthy, N., Jackson, R. N., Liu, Y., Ashworth, A., &amp; Doudna, J. A.</p>
+      <div class="pub-footer">
+        <span class="pub-badge" data-i18n="hl_nature">Second Author</span>
+        <span class="pub-doi"><a href="https://doi.org/10.1038/s41586-026-10738-7" target="_blank" rel="noopener">doi.org/10.1038/s41586-026-10738-7 →</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-overline" data-i18n="skills_overline">Expertise</span>
+      <h2 class="section-heading" data-i18n="skills_heading">Technical Skills</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-icon">🧬</div><h3 data-i18n="sk1_title">Molecular Biology</h3><p>PCR, qPCR, cloning, site-directed mutagenesis, transfection, transformation, RNA extraction, Western blotting, in vitro transcription, and CRISPR interference.</p></div>
+      <div class="skill-card"><div class="skill-icon">🔬</div><h3 data-i18n="sk2_title">Cell Biology</h3><p>Cell culture, immunofluorescence, cryosectioning, lentivirus and AAV packaging, iPSC maintenance, lipid nanoparticle formulation, and RNA in situ hybridisation.</p></div>
+      <div class="skill-card"><div class="skill-icon">📊</div><h3 data-i18n="sk3_title">Imaging &amp; Analysis</h3><p>Fiji macro programming, Ilastik training, IncuCyte live cell imaging, GraphPad Prism, BLAST, sequence alignment, and automated image quantification pipelines.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="affiliations">
+  <div class="container">
+    <div class="affil-label" data-i18n="affil_label">Affiliated Institutions</div>
+    <div class="affil-logos">
+      <a href="https://www.crick.ac.uk" target="_blank" rel="noopener" class="affil-item"><img src="logo-crick.png" alt="Francis Crick Institute"></a>
+      <a href="https://www.ucl.ac.uk" target="_blank" rel="noopener" class="affil-item"><img src="logo-ucl.png" alt="UCL"></a>
+      <a href="https://www.manchester.ac.uk" target="_blank" rel="noopener" class="affil-item"><img src="logo-manchester.png" alt="University of Manchester"></a>
+      <a href="https://gladstone.org" target="_blank" rel="noopener" class="affil-item"><img src="logo-gladstone.png" alt="Gladstone Institutes"></a>
+      <a href="https://www.ucsf.edu" target="_blank" rel="noopener" class="affil-item"><img src="logo-ucsf.png" alt="UCSF"></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="mailto:zhiyuancheng0730@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/zhiyuan-cheng-a92018264/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/zhiyuancheng0730-cloud" target="_blank" rel="noopener">GitHub</a>
+        <a href="Zhiyuan_Cheng_CV.pdf" target="_blank" data-i18n="nav_cv">Download CV</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Zhiyuan Cheng</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const T = {
+  zh: {
+    nav_about:"关于",nav_research:"研究",nav_publications:"论文发表",nav_skills:"技能",nav_cv:"下载简历",
+    hero_tagline:"探索细胞如何再生、重编程和抵抗疾病",
+    hero_desc:"即将入读<strong>弗朗西斯·克里克研究所</strong>的博士生，研究FOXO1功能获得性突变如何驱动肝脏再生和细胞重编程。曾在Gladstone研究所Jennifer Doudna实验室参与RNA触发的染色质剪切研究，为<strong>Nature</strong>论文的第二作者。",
+    hero_btn_research:"查看研究",hero_btn_contact:"联系我",
+    hl_nature:"第二作者",hl_honours:"一等荣誉 · 曼彻斯特",hl_labs:"美国研究实验室",
+    about_heading:"背景",
+    about_p1:"我的研究方向位于<strong>CRISPR基因组工程</strong>、<strong>干细胞生物学</strong>和<strong>再生医学</strong>的交叉领域。我关注的核心问题是细胞如何感知损伤、做出命运决定，并在某些组织中重建已失去的结构。",
+    about_p2:"我以<strong>生物化学一等荣誉学位</strong>毕业于曼彻斯特大学。在为期一年的美国研究实习期间，我在两个顶尖实验室积累了基因组工程、基因递送和心脏生物学方面的实践经验。",
+    about_p3:"在<strong>Gladstone研究所</strong>，我在Jennifer Doudna的实验室中将SuCas12a2的附带切割活性开发为选择性癌细胞杀伤平台，包括工程化蛋白变体、优化脂质纳米颗粒递送以及构建计算图像分析流程。在<strong>加州大学旧金山分校</strong>，我使用CRISPRi和AAV9递送系统在新生小鼠心脏中研究Taco1在心脏发育中的作用。",
+    about_p4:"2026年9月起，我将加入弗朗西斯·克里克研究所的<strong><a href='https://www.crick.ac.uk/research/labs/foad-rouhani' target='_blank' rel='noopener'>Rouhani实验室</a></strong>攻读博士学位，研究FOXO1 S22W功能获得性突变如何影响肝脏再生和利用人类iPSC衍生模型的细胞重编程。",
+    sidebar_institution:"所属机构",sidebar_degree:"学位授予",sidebar_supervisor:"导师",sidebar_undergrad:"本科",sidebar_email:"邮箱",sidebar_profiles:"学术主页",
+    research_heading:"精选项目",r1_date:"2026年9月起",
+    r1_title:"FOXO1功能获得性突变在肝脏再生与重编程中的作用",r1_desc:"博士项目，研究FOXO1 S22W功能获得性突变如何利用人类iPSC衍生的肝细胞模型影响肝脏再生和细胞重编程。导师：Foad Rouhani博士。",
+    r2_title:"RNA触发的染色质剪切消除TP53突变癌细胞",r2_desc:"将SuCas12a2的附带DNA切割活性编程为选择性杀死携带不可药靶TP53突变的癌细胞。",
+    r2_li1:"通过理性设计工程化SuCas12a2变体以提高催化活性",r2_li2:"设计并优化脂质纳米颗粒(LNP)体外和体内mRNA递送方案",r2_li3:"构建自动化图像分割和统计验证的计算流程",r2_li4:"通过dropout筛选表征Cas12a2直系同源物，确定PFS需求和PAM/PFS偏好",
+    r3_title:"CRISPRi解析Taco1在心脏发育与再生中的作用",r3_desc:"利用心脏特异性CRISPRi敲降和AAV9递送系统在新生小鼠心脏中研究Taco1在心肌细胞增殖中的作用。",
+    r3_li1:"在心脏特异性(cTnT)启动子下设计和克隆CRISPRi引导RNA",r3_li2:"将构建体包装到高滴度AAV9(>5×10¹² vg/µL)并递送至P1新生小鼠心脏",r3_li3:"通过免疫染色定量心肌细胞增殖、倍性和核化",r3_li4:"应用RNA Scope检测双核心肌细胞中的基因表达不对称性",
+    link_report:"阅读完整实习报告 →",link_pres:"查看实习演示 →",
+    pub_heading:"已发表论文",skills_overline:"专业技能",skills_heading:"技术技能",
+    sk1_title:"分子生物学",sk2_title:"细胞生物学",sk3_title:"成像与分析",
+    affil_label:"合作机构"
+  },
+  es: {
+    nav_about:"Acerca de",nav_research:"Investigación",nav_publications:"Publicaciones",nav_skills:"Habilidades",nav_cv:"Descargar CV",
+    hero_tagline:"Explorando cómo las células se regeneran, reprograman y resisten enfermedades",
+    hero_desc:"Estudiante de doctorado entrante en el <strong>Francis Crick Institute</strong>, investigando cómo las mutaciones de ganancia de función de FOXO1 impulsan la regeneración hepática y la reprogramación celular. Segundo autor de un artículo en <strong>Nature</strong> sobre trituración de cromatina activada por ARN, desarrollado en el laboratorio de Jennifer Doudna en los Gladstone Institutes.",
+    hero_btn_research:"Ver Investigación",hero_btn_contact:"Contacto",
+    hl_nature:"Segundo Autor",hl_honours:"Honores de Primera · Manchester",hl_labs:"Laboratorios · EE.UU.",
+    about_heading:"Trayectoria",
+    about_p1:"Mi investigación se sitúa en la intersección de la <strong>ingeniería genómica CRISPR</strong>, la <strong>biología de células madre</strong> y la <strong>medicina regenerativa</strong>. Me atraen las preguntas sobre cómo las células detectan el daño, toman decisiones de destino y, en algunos tejidos, reconstruyen lo perdido.",
+    about_p2:"Me gradué con <strong>Honores de Primera Clase en Bioquímica</strong> de la Universidad de Manchester. Durante una estancia de investigación de un año en EE.UU., adquirí experiencia práctica en ingeniería genómica, entrega génica y biología cardíaca en dos laboratorios líderes.",
+    about_p3:"En los <strong>Gladstone Institutes</strong>, trabajé en el laboratorio de Jennifer Doudna para programar la actividad de escisión colateral de SuCas12a2 en una plataforma selectiva de eliminación de células cancerosas, diseñando variantes de proteínas, optimizando la entrega de nanopartículas lipídicas y construyendo pipelines computacionales de análisis de imágenes. En <strong>UCSF</strong>, utilicé CRISPRi y entrega con AAV9 en corazones de ratones neonatales para investigar el papel de Taco1 en el desarrollo cardíaco.",
+    about_p4:"A partir de septiembre de 2026, me uniré al <strong><a href='https://www.crick.ac.uk/research/labs/foad-rouhani' target='_blank' rel='noopener'>Laboratorio Rouhani</a></strong> en el Francis Crick Institute para mi doctorado, investigando cómo las mutaciones de ganancia de función FOXO1 S22W influyen en la regeneración hepática y la reprogramación celular utilizando modelos derivados de iPSC humanas.",
+    sidebar_institution:"Institución",sidebar_degree:"Proveedor del título",sidebar_supervisor:"Supervisor",sidebar_undergrad:"Pregrado",sidebar_email:"Correo",sidebar_profiles:"Perfiles",
+    research_heading:"Proyectos Seleccionados",r1_date:"Desde Sep 2026",
+    r1_title:"Mutaciones de ganancia de función de FOXO1 en regeneración hepática y reprogramación",r1_desc:"Proyecto doctoral investigando cómo las mutaciones de ganancia de función FOXO1 S22W influyen en la regeneración hepática y la reprogramación celular utilizando modelos de hepatocitos derivados de iPSC humanas. Supervisado por el Dr. Foad Rouhani.",
+    r2_title:"Trituración de cromatina activada por ARN para eliminar células cancerosas con mutación TP53",r2_desc:"Se programó la actividad de escisión colateral de ADN de SuCas12a2 para eliminar selectivamente células cancerosas con mutaciones TP53 no tratables farmacológicamente.",
+    r2_li1:"Diseño de variantes de SuCas12a2 mediante diseño racional para aumentar la actividad catalítica",r2_li2:"Diseño y optimización de protocolos de nanopartículas lipídicas (LNP) para entrega de ARNm in vitro e in vivo",r2_li3:"Construcción de un pipeline computacional para segmentación automatizada de imágenes y validación estadística",r2_li4:"Caracterización de ortólogos de Cas12a2 mediante cribados dropout para definir requisitos de PFS y preferencias PAM/PFS",
+    r3_title:"Disección por CRISPRi de Taco1 en el desarrollo y regeneración cardíaca",r3_desc:"Investigación del papel de Taco1 en la proliferación de cardiomiocitos mediante knockdown por CRISPRi específico del corazón y entrega con AAV9 en corazones de ratones neonatales.",
+    r3_li1:"Diseño y clonación de ARN guía de CRISPRi bajo un promotor cardíaco específico (cTnT)",r3_li2:"Empaquetamiento de construcciones en AAV9 de alto título (>5×10¹² vg/µL) y entrega en corazones de ratones P1",r3_li3:"Cuantificación de proliferación, ploidía y nucleación de cardiomiocitos mediante inmunotinción",r3_li4:"Aplicación de RNA Scope para examinar la asimetría de expresión génica en cardiomiocitos binucleados",
+    link_report:"Leer informe completo de prácticas →",link_pres:"Ver presentación de prácticas →",
+    pub_heading:"Trabajo Publicado",skills_overline:"Experiencia",skills_heading:"Habilidades Técnicas",
+    sk1_title:"Biología Molecular",sk2_title:"Biología Celular",sk3_title:"Imagen y Análisis",
+    affil_label:"Instituciones Afiliadas"
+  },
+  fr: {
+    nav_about:"À propos",nav_research:"Recherche",nav_publications:"Publications",nav_skills:"Compétences",nav_cv:"Télécharger CV",
+    hero_tagline:"Explorer comment les cellules se régénèrent, se reprogramment et résistent aux maladies",
+    hero_desc:"Doctorant entrant au <strong>Francis Crick Institute</strong>, étudiant comment les mutations gain de fonction de FOXO1 stimulent la régénération hépatique et la reprogrammation cellulaire. Deuxième auteur d'un article dans <strong>Nature</strong> sur le broyage de la chromatine déclenché par l'ARN, développé dans le laboratoire de Jennifer Doudna aux Gladstone Institutes.",
+    hero_btn_research:"Voir la Recherche",hero_btn_contact:"Contact",
+    hl_nature:"Deuxième Auteur",hl_honours:"Mention Très Bien · Manchester",hl_labs:"Laboratoires · États-Unis",
+    about_heading:"Parcours",
+    about_p1:"Ma recherche se situe à l'intersection de l'<strong>ingénierie génomique CRISPR</strong>, de la <strong>biologie des cellules souches</strong> et de la <strong>médecine régénérative</strong>. Je suis attiré par les questions sur la façon dont les cellules détectent les dommages, prennent des décisions de destin et, dans certains tissus, reconstruisent ce qui a été perdu.",
+    about_p2:"J'ai obtenu mon diplôme avec <strong>mention Très Bien en Biochimie</strong> de l'Université de Manchester. Au cours d'un stage de recherche d'un an aux États-Unis, j'ai acquis une expérience pratique en ingénierie génomique, délivrance de gènes et biologie cardiaque dans deux laboratoires de premier plan.",
+    about_p3:"Aux <strong>Gladstone Institutes</strong>, j'ai travaillé dans le laboratoire de Jennifer Doudna pour programmer l'activité de clivage collatéral de SuCas12a2 en une plateforme d'élimination sélective des cellules cancéreuses, en concevant des variants protéiques, en optimisant la délivrance par nanoparticules lipidiques et en construisant des pipelines d'analyse d'images computationnelles. À l'<strong>UCSF</strong>, j'ai utilisé le CRISPRi et la délivrance par AAV9 dans des cœurs de souris néonatales pour étudier le rôle de Taco1 dans le développement cardiaque.",
+    about_p4:"À partir de septembre 2026, je rejoindrai le <strong><a href='https://www.crick.ac.uk/research/labs/foad-rouhani' target='_blank' rel='noopener'>Laboratoire Rouhani</a></strong> au Francis Crick Institute pour mon doctorat, en étudiant comment les mutations gain de fonction FOXO1 S22W influencent la régénération hépatique et la reprogrammation cellulaire à l'aide de modèles dérivés d'iPSC humaines.",
+    sidebar_institution:"Institution",sidebar_degree:"Fournisseur du diplôme",sidebar_supervisor:"Directeur",sidebar_undergrad:"Licence",sidebar_email:"E-mail",sidebar_profiles:"Profils",
+    research_heading:"Projets Sélectionnés",r1_date:"À partir de Sep 2026",
+    r1_title:"Mutations gain de fonction de FOXO1 dans la régénération hépatique et la reprogrammation",r1_desc:"Projet doctoral étudiant comment les mutations gain de fonction FOXO1 S22W influencent la régénération hépatique et la reprogrammation cellulaire à l'aide de modèles d'hépatocytes dérivés d'iPSC humaines. Supervisé par le Dr Foad Rouhani.",
+    r2_title:"Broyage de chromatine déclenché par l'ARN pour éliminer les cellules cancéreuses mutantes TP53",r2_desc:"Programmation de l'activité de clivage collatéral de l'ADN de SuCas12a2 pour tuer sélectivement les cellules cancéreuses portant des mutations TP53 non ciblables pharmacologiquement.",
+    r2_li1:"Conception de variants de SuCas12a2 par design rationnel pour augmenter l'activité catalytique",r2_li2:"Conception et optimisation de protocoles de nanoparticules lipidiques (LNP) pour la délivrance d'ARNm in vitro et in vivo",r2_li3:"Construction d'un pipeline computationnel pour la segmentation automatisée d'images et la validation statistique",r2_li4:"Caractérisation d'orthologues de Cas12a2 par criblage dropout pour définir les exigences PFS et les préférences PAM/PFS",
+    r3_title:"Dissection par CRISPRi de Taco1 dans le développement et la régénération cardiaque",r3_desc:"Étude du rôle de Taco1 dans la prolifération des cardiomyocytes par knockdown CRISPRi spécifique du cœur et délivrance par AAV9 dans des cœurs de souris néonatales.",
+    r3_li1:"Conception et clonage d'ARN guides CRISPRi sous un promoteur cardiaque spécifique (cTnT)",r3_li2:"Conditionnement des constructions dans des AAV9 à haut titre (>5×10¹² vg/µL) et délivrance dans des cœurs de souris P1",r3_li3:"Quantification de la prolifération, de la ploïdie et de la nucléation des cardiomyocytes par immunomarquage",r3_li4:"Application du RNA Scope pour examiner l'asymétrie d'expression génique dans les cardiomyocytes binucléés",
+    link_report:"Lire le rapport de stage complet →",link_pres:"Voir la présentation de stage →",
+    pub_heading:"Travaux Publiés",skills_overline:"Expertise",skills_heading:"Compétences Techniques",
+    sk1_title:"Biologie Moléculaire",sk2_title:"Biologie Cellulaire",sk3_title:"Imagerie et Analyse",
+    affil_label:"Institutions Affiliées"
+  }
+};
+
+let currentLang = localStorage.getItem('lang') || 'en';
+const langLabels = {en:'EN',zh:'中文',es:'ES',fr:'FR'};
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.getElementById('currentLang').textContent = langLabels[lang];
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+  document.querySelectorAll('.lang-option').forEach(el => el.classList.toggle('active', el.textContent.includes(langLabels[lang]) || (lang==='en' && el.textContent==='English') || (lang==='zh' && el.textContent==='中文') || (lang==='es' && el.textContent==='Español') || (lang==='fr' && el.textContent==='Français')));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (lang === 'en') {
+      if (el._origHTML) el.innerHTML = el._origHTML;
+    } else if (T[lang] && T[lang][key]) {
+      if (!el._origHTML) el._origHTML = el.innerHTML;
+      el.innerHTML = T[lang][key];
+    }
+  });
+  document.getElementById('langDropdown').classList.remove('open');
+}
+
+function toggleLangMenu() {
+  document.getElementById('langDropdown').classList.toggle('open');
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.lang-switcher')) document.getElementById('langDropdown').classList.remove('open');
+});
+
+function closeMenu() { document.querySelector('.nav-links').classList.remove('open'); }
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+
+// Store original English HTML and apply saved language
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-i18n]').forEach(el => { el._origHTML = el.innerHTML; });
+  if (currentLang !== 'en') setLang(currentLang);
+  else document.getElementById('currentLang').textContent = 'EN';
+});
+</script>
+</body>
+</html>
